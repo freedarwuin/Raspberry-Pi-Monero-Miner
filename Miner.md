@@ -1,3 +1,22 @@
+#Install Dependencies
+sudo apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev -y 
+sudo apt-get update -y
+sudo apt-get install git -y
+sudo apt-get install -y --force-yes autoconf automake libtool
+sudo apt-get install screen -y
+sudo apt-get install build-essential -y
+
+#Installing the miner
+git clone https://github.com/tpruvot/cpuminer-multi
+cd cpuminer-multi
+
+#Building the miner
+./autogen.sh
+./build.sh
+
+#Mining
+screen ./cpuminer -a cryptonight -o stratum+tcp://teracycle.net:3333 -p x -u (wallet)  --api-bind 0
+
 Raspbian uses dphys-swapfile, which is a swap-file based solution instead of the "standard" swap-partition based solution. It is much easier to change the size of the swap.
 
 The configuration file is:
