@@ -46,3 +46,8 @@ If you want to change the size, you need to modify the number and restart dphys-
 Edit: On Raspbian the default location is /var/swap, which is (of course) located on the SD card. I think it is a bad idea, so I would like to point out, that the /etc/dphys-swapfile can have the following option too: ```CONF_SWAPFILE=/media/btsync/swapfile```
 
 I only problem with it, the usb storage is automounted, so a potential race here (automount vs. swapon)
+
+#### Autorun
+```
+sudo nano /etc/rc.local
+```
