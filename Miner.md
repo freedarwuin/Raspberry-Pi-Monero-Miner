@@ -25,27 +25,27 @@ cd cpuminer-multi
 screen ./cpuminer -a cryptonight -o stratum+tcp://teracycle.net:3333 -p x -u (wallet)  --api-bind 0
 ```
 
-Raspbian uses dphys-swapfile, which is a swap-file based solution instead of the "standard" swap-partition based solution. 
-It is much easier to change the size of the swap.
+Raspbian utiliza dphys-swapfile, que es una solución basada en archivos de intercambio en lugar de la solución basada en particiones de intercambio "estándar".
+Es mucho más fácil cambiar el tamaño del intercambio.
 
-The configuration file is:
+El archivo de configuración es:
 ```
 /etc/dphys-swapfile 
 ```
 
-The content is very simple. By default my Raspbian has 100MB of swap:
+El contenido es muy simple. Por defecto, mi Raspbian tiene 100 MB de intercambio:
 ```
 CONF_SWAPSIZE=100
 ```
-If you want to change the size, you need to modify the number and restart dphys-swapfile:
+Si desea cambiar el tamaño, debe modificar el número y reiniciar dphys-swapfile:
 ```
 /etc/init.d/dphys-swapfile stop
 /etc/init.d/dphys-swapfile start
 ```
 
-Edit: On Raspbian the default location is /var/swap, which is (of course) located on the SD card. I think it is a bad idea, so I would like to point out, that the /etc/dphys-swapfile can have the following option too: ```CONF_SWAPFILE=/media/btsync/swapfile```
+Editar: en Raspbian, la ubicación predeterminada es /var/swap, que (por supuesto) se encuentra en la tarjeta SD. Creo que es una mala idea, por lo que me gustaría señalar que /etc/dphys-swapfile también puede tener la siguiente opción: ```CONF_SWAPFILE=/media/btsync/swapfile```
 
-I only problem with it, the usb storage is automounted, so a potential race here (automount vs. swapon)
+Solo tengo un problema con eso, el almacenamiento USB es de montaje automático, por lo que una carrera potencial aquí (montaje automático vs. swapon)
 
 #### Ejecución automática
 ```
