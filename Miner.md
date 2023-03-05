@@ -10,7 +10,7 @@ sudo apt-get install build-essential -y
 
 #### Instalación del minero
 ```
-git clone https://github.com/tpruvot/cpuminer-multi
+git clone https://github.com/freedarwuin/cpuminer-multi
 cd cpuminer-multi
 ```
 
