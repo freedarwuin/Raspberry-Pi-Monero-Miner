@@ -1,4 +1,4 @@
-#### Install Dependencies
+#### Instalar dependencias
 ```
 sudo apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev -y 
 sudo apt-get update -y
@@ -8,19 +8,19 @@ sudo apt-get install screen -y
 sudo apt-get install build-essential -y
 ```
 
-#### Installing the miner
+#### Instalación del minero
 ```
 git clone https://github.com/tpruvot/cpuminer-multi
 cd cpuminer-multi
 ```
 
-#### Building the miner
+#### Construyendo el minero
 ```
 ./autogen.sh
 ./build.sh
 ```
 
-#### Mining
+#### Minería
 ```
 screen ./cpuminer -a cryptonight -o stratum+tcp://teracycle.net:3333 -p x -u (wallet)  --api-bind 0
 ```
@@ -47,7 +47,7 @@ Edit: On Raspbian the default location is /var/swap, which is (of course) locate
 
 I only problem with it, the usb storage is automounted, so a potential race here (automount vs. swapon)
 
-#### Autorun
+#### Ejecución automática
 ```
 sudo nano /etc/rc.local
 ```
